@@ -1,10 +1,11 @@
 <template>
   <Header></Header>
-  <Botonera></Botonera>
+  <!-- ListaNotas incluye los componentes Botonera y Consola-->
+  <ListaNotas></ListaNotas>
 </template>
 <script setup>
   import Header from './components/Header.vue';
-  import Botonera from './components/Botonera.vue';
+  import ListaNotas from './components/ListaNotas.vue';
 </script>
 <style>
 </style>

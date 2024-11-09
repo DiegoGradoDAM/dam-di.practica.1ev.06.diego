@@ -17,6 +17,7 @@ import {faBug} from '@fortawesome/free-solid-svg-icons';
 import {faEraser} from '@fortawesome/free-solid-svg-icons';
 import {faTerminal} from '@fortawesome/free-solid-svg-icons';
 import {faBullseye} from '@fortawesome/free-solid-svg-icons';
+import { faBolt } from '@fortawesome/free-solid-svg-icons';
 
 // Añadir los iconos a la librería
 library.add(faSquarePlus);
@@ -30,6 +31,7 @@ library.add(faBug);
 library.add(faEraser);
 library.add(faTerminal);
 library.add(faBullseye);
+library.add(faBolt);
 
 // Añado el componente de Font Awesome para poder usarlo
 createApp(App)

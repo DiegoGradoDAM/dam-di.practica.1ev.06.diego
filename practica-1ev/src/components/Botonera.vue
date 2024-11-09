@@ -1,22 +1,66 @@
 <template>
-    <div class="listaBotones">
-        <div class="botonGrupo">
-            <button><font-awesome-icon :icon="['fas', 'square-plus']" /> Nueva</button>
-            <button><font-awesome-icon :icon="['fas', 'clone']" /> Clonar</button>
-            <button><font-awesome-icon :icon="['fas', 'trash-can']" /> Borrar</button>
-            <button><font-awesome-icon :icon="['fas', 'broom']" /> Limpiar</button>
-            <button><font-awesome-icon :icon="['fas', 'square-check']" /> Seleccionar</button>
-            <button><font-awesome-icon :icon="['fas', 'arrow-rotate-left']" /> Invertir</button>
-            <button><font-awesome-icon :icon="['fas', 'ban']" /> Anular</button>
-        </div>
-        <div class="botonGrupo">
-            <button><font-awesome-icon :icon="['fas', 'bug']" /> Debug</button>
-            <button><font-awesome-icon :icon="['fas', 'eraser']" /> Limpiar</button>
-            <button><font-awesome-icon :icon="['fas', 'terminal']" /> Consola</button>
-        </div>
+  <div class="listaBotones">
+    <div class="botonGrupo">
+      <button @click="nuevaNota"><font-awesome-icon :icon="['fas', 'square-plus']" /> Nueva</button>
+      <button @click="clonarSeleccionada"><font-awesome-icon :icon="['fas', 'clone']" /> Clonar</button>
+      <button @click="borrarSeleccionada"><font-awesome-icon :icon="['fas', 'trash-can']" /> Borrar</button>
+      <button @click="limpiarTodo"><font-awesome-icon :icon="['fas', 'broom']" /> Limpiar</button>
+      <button @click="seleccionarTodo"><font-awesome-icon :icon="['fas', 'square-check']" /> Seleccionar</button>
+      <button @click="invertir"><font-awesome-icon :icon="['fas', 'arrow-rotate-left']" /> Invertir</button>
+      <button @click="quitarSeleccion"><font-awesome-icon :icon="['fas', 'ban']" /> Anular</button>
     </div>
+    <div class="botonGrupo">
+      <button @click="consola"><font-awesome-icon :icon="['fas', 'bug']" /> Debug</button>
+      <button @click="limpiarDebug"><font-awesome-icon :icon="['fas', 'eraser']" /> Limpiar</button>
+      <button @click="consola"><font-awesome-icon :icon="['fas', 'terminal']" /> Consola</button>
+    </div>
+  </div>
 </template>
+
 <script setup>
+import { defineEmits } from 'vue';
+
+const emits = defineEmits([
+  'nuevaNota', 'clonarSeleccionada', 'borrarSeleccionada', 'limpiarTodo',
+  'seleccionarTodo', 'invertir', 'quitarSeleccion',
+  'debug', 'limpiarDebug', 'consola'
+]);
+
+function nuevaNota() {
+  emits('nuevaNota');
+}
+
+function clonarSeleccionada() {
+  emits('clonarSeleccionada');
+}
+
+function borrarSeleccionada() {
+  emits('borrarSeleccionada');
+}
+
+function limpiarTodo() {
+  emits('limpiarTodo');
+}
+
+function seleccionarTodo() {
+  emits('seleccionarTodo');
+}
+
+function invertir() {
+  emits('invertir');
+}
+
+function quitarSeleccion() {
+  emits('quitarSeleccion');
+}
+
+function limpiarDebug() {
+  emits('limpiarDebug');
+}
+
+function consola() {
+  emits('consola');
+}
 </script>
 <style scoped>
   .listaBotones {
