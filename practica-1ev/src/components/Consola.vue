@@ -1,7 +1,7 @@
 <template>
     <div class="consola">
         <ul>
-            <li v-for="(log, index) in logs" :key="index">{{ log.value }}</li>
+            <li v-for="(log, index) in logs" :key="index"><font-awesome-icon :icon="['fas', 'bolt']" /> {{ log.value }}</li>
         </ul>
     </div>
 </template>
